@@ -1,0 +1,115 @@
+.main-sidebar__context {
+  display: flex;
+  width: $sidebarSize+px;
+  border-right: 1px solid var(--color-grey-300);
+  background: var(--color-grey-100);
+  position: fixed;
+  left: $layoutSize+px;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  &.is__dark {
+    background: var(--color-grey-200) !important;
+  }
+
+  .main__sidebar__loader {
+    background: red;
+    background: var(--color-grey-200);
+    width: 100%;
+    height: 100%;
+  }
+
+  .sidebar-inner__context {
+    position: relative;
+    width: 100%;
+  }
+
+  .sidebar__separator {
+    width: 100%;
+    height: 1px;
+    background: var(--color-grey-300);
+    clear: both;
+  }
+
+  .sidebar__heading {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: var(--colour-grey-dark-mode-900);
+    line-height: 1;
+  }
+
+  .sidebar__card__box {
+    padding: 16px 16px 15px 16px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+
+    a {
+      text-decoration: none;
+      width: 100%;
+    }
+
+    &.with__border-bottom {
+      border-bottom: 1px solid var(--color-grey-300);
+    }
+
+    .sidebar__car__list__item {
+      font-size: 13px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1;
+      letter-spacing: normal;
+      text-align: left;
+      color: var(--color-grey-700);
+      padding: 6px;
+      margin: 1px 0;
+      border-radius: 4px;
+      width: 100%;
+      user-select: none;
+      cursor: pointer;
+
+      &.selected__item {
+        color: var(--color-grey-900);
+        background-color: var(--color-grey-300);
+      }
+      a{
+        text-decoration: none;
+        color: var(--color-grey-700);
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.sidebar__toggle-action {
+  //border: 1px solid var(--color--gray-300);
+  //background: var(--color-grey-400);
+  width: 19px;
+  height: 19px;
+  border-radius: 9.5px;
+  position: fixed;
+  top: 14px;
+  left: (($layoutSize + $sidebarSize) - 11) + px;
+  //color: var(--color-grey-800);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  z-index: 99999999;
+  transition: left 0.2s ease;
+
+  &.is__collapse {
+    left: ($layoutSize - 11) + px;
+    transform: rotate(180deg);
+  }
+}

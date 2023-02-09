@@ -1,0 +1,2 @@
+
+export const UPDATE_AUTH_TOKEN = 'UPDATE_AUTH_TOKEN';

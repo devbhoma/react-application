@@ -1,0 +1,90 @@
+$layoutSize: 60;
+$breadcrumbsSize: 47;
+$sidebarSize: 188;
+
+@import "src/views/layouts/app/breadcrumbs/style";
+@import "src/views/layouts/app/nav/style";
+@import "src/views/layouts/app/sidebar/style";
+
+
+
+.app-layouts__context {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0 0 0 $layoutSize+px;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: all .3s ease;
+}
+
+
+.primary-layout__context {
+    position: fixed;
+    overflow: hidden;
+    left: $layoutSize+px;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    transition: all .3s ease,transform .15s ease-in-out,opacity .15s ease-out;
+    display: flex;
+    flex-direction: row;
+
+    .routes-content__wrapper {
+        padding: 0;
+        position: relative;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        transition: margin-left 0.2s ease, width 0.2s ease;
+        background: var(--color-theme-bg);
+
+        &.with__sidebar {
+            margin-left: $sidebarSize + px;
+            width: calc(100% - #{$sidebarSize}px);
+        }
+
+        &.sidebar__is_opened {
+            margin-left: 0;
+            width: 100%;
+            z-index: 9999;
+        }
+
+        .main__playground__context {
+           // padding: 15px;
+            width: 100%;
+        }
+    }
+}
+.hello-bar{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px;
+    border-bottom: 1px solid var(--color-grey-300);
+    .title {
+        font-size: 19px;
+    }
+}
+.hide-main-sidebar{
+    padding: 0;
+    .primary-layout__context    {
+        left: 0;
+        bottom: unset;
+        top: unset;
+    }
+    .main-sidebar__context{
+        left: 0;
+        bottom: unset;
+        top: unset;
+    }
+}
+.installation-sidebar{
+    .sidebar__card__box{
+        padding: 0;
+    }
+}

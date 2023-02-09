@@ -1,0 +1,10 @@
+:root {
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-theme-bg : #ffffff;
+}
+
+/**** Dark theme color variables *****/
+[data-theme='dark']{
+  --color-theme-bg : #191c23;
+}
